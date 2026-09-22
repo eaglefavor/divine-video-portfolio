@@ -6,3 +6,42 @@
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}
 
 .skip-link{position:fixed;z-index:200;top:10px;left:10px;padding:12px 20px;background:var(--ink);color:white;border-radius:3px;transform:translateY(-150%);font-size:13px}.skip-link:focus{transform:translateY(0)}
+
+/* --- Contact additions --- */
+.hero-direct-contact{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
+.hero-contact-link{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:500;padding:9px 13px;border:1px solid var(--line);border-radius:4px;background:#fff8;transition:background .2s}
+.hero-contact-link:hover{background:#e9e7de}
+.about-contact{display:flex;flex-direction:column;gap:10px;margin:18px 0 22px;padding:16px;background:#edeee6;border-radius:4px;border:1px solid var(--line)}
+.about-contact-link{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:500}
+.about-contact-link:hover{color:var(--red)}
+.contact-details{display:flex;gap:14px;flex-wrap:wrap;margin:10px 0 24px;padding-top:22px;border-top:1px solid #ffffff30}
+.contact-detail-item{flex:1;min-width:210px;display:flex;flex-direction:column;gap:6px;padding:14px 16px;background:#ffffff18;border:1px solid #ffffff30;border-radius:4px;backdrop-filter:blur(4px);transition:background .2s}
+.contact-detail-item:hover{background:#ffffff28}
+.contact-detail-label{font-size:7px;letter-spacing:1.2px;display:flex;align-items:center;gap:6px;opacity:.85}
+.contact-detail-value{font-size:14px;font-weight:600;letter-spacing:-.2px;word-break:break-all}
+.brief-direct-contact{margin-top:22px;padding:16px;background:#f3f1e8;border:1px solid var(--line);border-radius:4px}
+.brief-direct-contact p{font-size:11px;font-weight:600;margin-bottom:10px;color:var(--ink)}
+.brief-contact-links{display:flex;flex-wrap:wrap;gap:12px}
+.brief-contact-links a{display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:500;text-decoration:none}
+.brief-direct-contact .brief-contact-links a{color:var(--ink);padding:8px 12px;border:1px solid var(--line);border-radius:3px;background:white;transition:background .2s}
+.brief-direct-contact .brief-contact-links a:hover{background:#e9e7de}
+.brief-contact{margin-top:24px;padding:18px;background:#f3f1e8;border-radius:4px;border:1px solid var(--line)}
+.brief-contact p{font-size:11px;font-weight:600;margin-bottom:12px}
+.brief-contact .brief-contact-links a{font-size:11px}
+.footer-contact{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.footer-contact a{border:none!important;width:auto!important;height:auto!important;display:inline-flex!important;font-size:9px;color:#5a5e52}
+.footer-contact a:hover{color:var(--red)}
+.footer-contact span{font-size:9px}
+@media(max-width:800px){
+  .hero-direct-contact{margin-top:14px}
+  .hero-contact-link{font-size:10px;padding:8px 11px}
+  .contact-details{flex-direction:column}
+  .contact-detail-item{min-width:0}
+  .contact-detail-value{font-size:13px}
+}
+@media(max-width:600px){
+  .about-contact{padding:14px}
+  .brief-contact-links{flex-direction:column}
+  .footer{height:auto;padding:22px 0;flex-wrap:wrap;gap:14px}
+  .footer-contact{width:100%;justify-content:space-between}
+}

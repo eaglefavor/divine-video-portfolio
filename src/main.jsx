@@ -32,7 +32,6 @@ const toolWorkflows = [
     category: 'Editing & Color Finishing',
     tag: 'THE FINISHING STUDIO',
     icon: Aperture,
-    image: '/images/workflow-resolve.jpg',
     color: '#ed4e31',
     summary: 'My main home for serious work. I cut, grade, mix and deliver here when the story needs to feel cinematic and precise.',
     steps: [
@@ -56,7 +55,6 @@ const toolWorkflows = [
     category: 'Fast Editorial & Client Work',
     tag: 'THE ROUGH CUT ENGINE',
     icon: Film,
-    image: '/images/workflow-premiere.jpg',
     color: '#5a5cf0',
     summary: 'When speed and collaboration matter. Great for client review cycles, team projects, and quick turnarounds.',
     steps: [
@@ -80,7 +78,6 @@ const toolWorkflows = [
     category: 'Procedural VFX & Worlds',
     tag: 'THE IMPOSSIBLE BUILDER',
     icon: Box,
-    image: '/images/workflow-houdini.jpg',
     color: '#ff6a2b',
     summary: 'Where I build what cameras can’t capture. Procedural, node-based, built to change — perfect for worlds, destruction, and magic.',
     steps: [
@@ -103,7 +100,6 @@ const toolWorkflows = [
     category: 'Social & Quick Content',
     tag: 'THE SPEED EDITOR',
     icon: Smartphone,
-    image: '/images/workflow-capcut.jpg',
     color: '#00d8ff',
     summary: 'For content that needs to ship today. Mobile-first, trend-aware, built for TikTok, Reels, and Shorts that stop thumbs.',
     steps: [
@@ -125,7 +121,6 @@ const toolWorkflows = [
     category: 'AI Video Generation',
     tag: 'THE IDEA AMPLIFIER',
     icon: Wand2,
-    image: '/images/workflow-gemini.jpg',
     color: '#8b5cf6',
     summary: 'I use it as a concept engine, not a replacement. Generate starting points, explore looks, then take over in Resolve to make it human.',
     steps: [
@@ -147,7 +142,6 @@ const toolWorkflows = [
     category: 'AI Music & Sound',
     tag: 'THE SOUND EXPLORER',
     icon: Music,
-    image: '/images/workflow-lyria.jpg',
     color: '#10b981',
     summary: 'For when you need original music but can’t afford composer yet, or need to explore mood before hiring. I generate ideas, then shape them to picture.',
     steps: [
@@ -277,7 +271,7 @@ function App() {
 
       <section className="workflow-section wrap section-space" id="workflow">
         <div className="section-topline"><span className="eyebrow"><span className="red small-plus">+</span> THE TOOLKIT, DECONSTRUCTED</span><span className="section-index">02 / HOW I ACTUALLY WORK</span></div>
-        <div className="section-heading"><h2>Every tool has its moment.<br/>Here’s <span className="serif">exactly how I use it.</span></h2><p>Not just what software I know — but the step-by-step process I follow from first click to final export. Real workflow, with real photos of the process.</p></div>
+        <div className="section-heading"><h2>Every tool has its moment.<br/>Here’s <span className="serif">exactly how I use it.</span></h2><p>Not just what software I know — but the step-by-step process I follow from first click to final export. Real workflow, broken down clearly.</p></div>
         
         <div className="workflow-tabs">
           <button className={activeWorkflowTab === 'all' ? 'active' : ''} onClick={() => setActiveWorkflowTab('all')}>All Tools</button>
@@ -289,13 +283,10 @@ function App() {
             const Icon = tool.icon;
             return (
               <button key={tool.id} className="workflow-card" onClick={() => setWorkflowDetail(tool)}>
-                <div className="workflow-card-image">
-                  <img src={tool.image} alt={`${tool.name} workflow`} loading="lazy"/>
-                  <div className="workflow-card-overlay">
-                    <span className="workflow-card-tag">{tool.tag}</span>
-                    <span className="workflow-card-open"><ArrowUpRight size={18}/></span>
-                  </div>
-                  <div className="workflow-card-icon"><Icon size={18}/></div>
+                <div className="workflow-card-top" style={{borderTopColor: tool.color}}>
+                  <div className="workflow-card-icon" style={{background: tool.color}}><Icon size={18}/></div>
+                  <span className="workflow-card-tag">{tool.tag}</span>
+                  <span className="workflow-card-open"><ArrowUpRight size={18}/></span>
                 </div>
                 <div className="workflow-card-info">
                   <div className="workflow-card-header">
@@ -341,10 +332,9 @@ function App() {
     {workflowDetail && (
       <Modal onClose={() => setWorkflowDetail(null)} title={`${workflowDetail.name.toUpperCase()} / WORKFLOW DEEP DIVE`}>
         <div className="workflow-detail">
-          <div className="workflow-detail-hero">
-            <img src={workflowDetail.image} alt={`${workflowDetail.name} workflow`}/>
+          <div className="workflow-detail-hero no-image" style={{background: workflowDetail.color}}>
             <div className="workflow-detail-hero-overlay">
-              <span className="eyebrow red">{workflowDetail.tag}</span>
+              <span className="eyebrow">{workflowDetail.tag}</span>
               <h2>{workflowDetail.name}</h2>
               <p>{workflowDetail.category}</p>
             </div>
